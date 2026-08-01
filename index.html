@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Mixing &amp; Mastering</title>
+<meta name="description" content="Mixing and mastering engineer — project reel and contact.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Fader rail: doubles as scroll progress + section nav. -->
+<nav class="rail" aria-label="Section navigation">
+  <div class="rail__track">
+    <div class="rail__thumb" id="railThumb" aria-hidden="true"></div>
+  </div>
+  <ul class="rail__stops">
+    <li><a href="#hero" class="rail__stop" data-section="hero" aria-label="Home"><span>HOME</span></a></li>
+    <li><a href="#about" class="rail__stop" data-section="about" aria-label="About"><span>ABOUT</span></a></li>
+    <li><a href="#contact" class="rail__stop" data-section="contact" aria-label="Contact"><span>CONTACT</span></a></li>
+    <li><a href="#work" class="rail__stop" data-section="work" aria-label="Work"><span>WORK</span></a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero" class="hero" data-section="hero">
+    <div class="hero__inner hero__inner--split">
+      <div class="hero__photo" aria-hidden="true">
+        <!-- Replace this with an <img src="your-photo.jpg" alt="..."> -->
+        <span>PHOTO</span>
+      </div>
+      <div>
+        <p class="eyebrow">MIXING &amp; MASTERING</p>
+        <h1 class="hero__headline">Your Name</h1>
+        <p class="hero__sub">
+          A short line describing your sound and specialty — e.g. genres you
+          gravitate toward, or what clients get working with you.
+        </p>
+        <div class="hero__meter" aria-hidden="true">
+          <div class="meter-bars">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="meter-label">SIGNAL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / STATEMENT OF PURPOSE -->
+  <section id="about" class="about" data-section="about">
+    <div class="about__single">
+      <p class="eyebrow">STATEMENT OF PURPOSE</p>
+      <h2 class="section-title">What I do, and why</h2>
+      <p class="about__text">
+        Replace this paragraph with your statement of purpose — what you offer
+        (mixing, mastering, or both), the kind of records you like to work on,
+        and what a client can expect from the process. Keep it to a few
+        sentences; this is the pitch, not the full bio.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact" data-section="contact">
+    <div class="contact__inner">
+      <p class="eyebrow">START A PROJECT</p>
+      <h2 class="section-title">Tell me about your track</h2>
+      <p class="contact__note">
+        Fill this out and I'll follow up. A link to a rough mix helps me scope
+        the project faster.
+      </p>
+
+      <!--
+        Replace YOUR_FORM_ID below with the ID Formspree gives you
+        after you create a free form at https://formspree.io
+      -->
+      <form
+        class="channel-form"
+        id="contactForm"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
+        <div class="field">
+          <label for="name">NAME</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="description">PROJECT DESCRIPTION &amp; GOALS</label>
+          <textarea id="description" name="project_description" rows="4" required
+            placeholder="What's the song, and what are you hoping to get from mixing/mastering?"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="trackCount">NUMBER OF TRACKS</label>
+          <input type="text" id="trackCount" name="track_count" placeholder="e.g. 1 single, or a 5-song EP">
+        </div>
+
+        <div class="field">
+          <label for="references">REFERENCES</label>
+          <textarea id="references" name="references" rows="3"
+            placeholder="Songs or artists whose sound/mix you're aiming for"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="roughMix">LINK TO ROUGH MIX</label>
+          <input type="url" id="roughMix" name="rough_mix_link" placeholder="https://drive.google.com/...">
+        </div>
+
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <button type="submit" class="btn btn--send">Send message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- WORK / PROJECT LISTING -->
+  <section id="work" class="music" data-section="work">
+    <p class="eyebrow">WORK</p>
+    <h2 class="section-title">Projects</h2>
+    <p class="music__note">
+      Edit the <code>PROJECTS</code> array in <code>script.js</code> to add your
+      own — artist, country, genre, whether you mixed, mastered, or both, the
+      artwork, and a link to the track.
+    </p>
+
+    <ol class="tracklist" id="tracklist" aria-label="Project list">
+      <!-- populated by script.js from the PROJECTS array -->
+    </ol>
+  </section>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Your Name</span>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
