@@ -3,12 +3,12 @@
    ============================================ */
 :root {
   --bg: #000000;
-  --panel: #1e2024;
+  --panel: #000000;
   --panel-2: #24272b;
   --text: #edeae3;
   --muted: #9a9da3;
-  --amber: #e8a33d;
-  --teal: #4fa893;
+  --amber: #ffffff;
+  --teal: #000000;
   --line: rgba(237, 234, 227, 0.12);
 
   --font-display: 'Space Grotesk', sans-serif;
