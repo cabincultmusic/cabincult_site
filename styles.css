@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'Gagalin';
-  src: url('fonts/Gagalin-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* ============================================
    TOKENS
    ============================================ */
@@ -18,9 +11,9 @@
   --teal: #4fa893;
   --line: rgba(237, 234, 227, 0.12);
 
-  --font-display: 'Gagalin', sans-serif;
-  --font-body: 'Gagalin', sans-serif;
-  --font-mono: 'Gagalin', sans-serif;
+  --font-display: 'Just Me Again Down Here', sans-serif;
+  --font-body: 'Just Me Again Down Here', sans-serif;
+  --font-mono: 'Just Me Again Down Here', sans-serif;
 
   --rail-width: 64px;
 }
