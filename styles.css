@@ -1,23 +1,17 @@
 /* ============================================
    TOKENS
    ============================================ */
-@font-face {
-  font-family: 'Gagalin';
-  src: url('fonts/Gagalin-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
 :root {
   --bg: #000000;
   --panel: #000000;
   --panel-2: #24272b;
   --text: #edeae3;
   --muted: #9a9da3;
-  --amber: #ffffff;
-  --teal: #000000;
+  --amber: #e8a33d;
+  --teal: #4fa893;
   --line: rgba(237, 234, 227, 0.12);
 
-  --font-display: 'Gagalin', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Newsreader', serif;
   --font-mono: 'JetBrains Mono', monospace;
 
@@ -151,12 +145,28 @@ a { color: inherit; }
 
 .hero__inner { max-width: 760px; }
 
-.hero__inner--split {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 3rem;
-  align-items: center;
-  max-width: 900px;
+.hero__inner--stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 700px;
+}
+
+.hero__top-photo {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hero__top-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero__photo {
@@ -212,12 +222,12 @@ a { color: inherit; }
 .meter-bars {
   display: flex;
   align-items: flex-end;
-  gap: 8px;
-  height: 84px;
+  gap: 4px;
+  height: 28px;
 }
 
 .meter-bars span {
-  width: 12px;
+  width: 4px;
   background: var(--teal);
   border-radius: 1px;
   animation: pulse 1.4s ease-in-out infinite;
@@ -432,6 +442,30 @@ a { color: inherit; }
 
 .contact__inner { max-width: 620px; }
 
+.contact__grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 900px;
+}
+
+.contact__photo {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.contact__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .contact__note {
   color: var(--muted);
   margin: 0 0 2.5rem;
@@ -568,12 +602,15 @@ textarea { resize: vertical; }
     height: 100px;
   }
 
-  .hero__inner--split {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .hero__top-photo {
+    max-width: 100%;
   }
 
-  .hero__photo {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__photo {
     width: 140px;
   }
 

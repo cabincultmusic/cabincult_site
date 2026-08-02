@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name — Mixing &amp; Mastering</title>
-<meta name="description" content="Mixing and mastering engineer — project reel and contact.">
+<title>Cabin Cult Music — Mixing &amp; Mastering</title>
+<meta name="description" content="Cabin Cult Music — mixing and mastering by Darren Jorde. Project reel and contact.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2? <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,15 +31,15 @@
 
   <!-- HERO -->
   <section id="hero" class="hero" data-section="hero">
-    <div class="hero__inner hero__inner--split">
-      <div class="hero__photo">
-        <img src="photo.jpg" alt="Cabin Cult Music">
+    <div class="hero__inner hero__inner--stacked">
+      <div class="hero__top-photo">
+        <img src="hero-photo.jpg" alt="Cabin Cult Music">
       </div>
       <div>
         <p class="eyebrow">MIXING &amp; MASTERING</p>
-        <h1 class="hero__headline">Cabin Cult Music </h1>
+        <h1 class="hero__headline">Cabin Cult Music</h1>
         <p class="hero__sub">
-          The home of Darren Jorde mixing and mastering
+          The home of Darren Jorde mixing and mastering.
         </p>
         <div class="hero__meter" aria-hidden="true">
           <div class="meter-bars">
@@ -56,20 +56,28 @@
   <section id="about" class="about" data-section="about">
     <div class="about__single">
       <p class="eyebrow">STATEMENT OF PURPOSE</p>
-      <h2 class="section-title">DEPTH. IMPACT. CLARITY. 
+      <h2 class="section-title">What I do, and why</h2>
       <p class="about__text">
-        I believe in the power of a unique mix. My commitment is to your artistic vision, providing the technical precision and creative insight needed to elevate your work. I offer straightforward advice and a steadfast dedication to completing every project to your absolute satisfaction.
+        Replace this paragraph with your statement of purpose — what you offer
+        (mixing, mastering, or both), the kind of records you like to work on,
+        and what a client can expect from the process. Keep it to a few
+        sentences; this is the pitch, not the full bio.
       </p>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact" data-section="contact">
-    <div class="contact__inner">
+    <div class="contact__grid">
+      <div class="contact__photo">
+        <img src="photo.jpg" alt="Darren Jorde">
+      </div>
+      <div class="contact__inner">
       <p class="eyebrow">START A PROJECT</p>
       <h2 class="section-title">Tell me about your track</h2>
       <p class="contact__note">
-        Fill this out and I'll follow up. A link to a rough mix helps me understand the project better.
+        Fill this out and I'll follow up. A link to a rough mix helps me scope
+        the project faster.
       </p>
 
       <!--
@@ -95,12 +103,12 @@
         <div class="field">
           <label for="description">PROJECT DESCRIPTION &amp; GOALS</label>
           <textarea id="description" name="project_description" rows="4" required
-            placeholder="Did you track this at home, in a studio, or live? What is the tempo? Number of songs to mix?"></textarea>
+            placeholder="What's the song, and what are you hoping to get from mixing/mastering?"></textarea>
         </div>
 
         <div class="field">
           <label for="trackCount">NUMBER OF TRACKS</label>
-          <input type="text" id="trackCount" name="track_count" placeholder="e.g. stereo track for mastering or 16, 24 tracks etc.">
+          <input type="text" id="trackCount" name="track_count" placeholder="e.g. 1 single, or a 5-song EP">
         </div>
 
         <div class="field">
@@ -119,6 +127,7 @@
         <button type="submit" class="btn btn--send">Send message</button>
         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
+      </div>
     </div>
   </section>
 
@@ -138,7 +147,7 @@
   </section>
 
   <footer class="site-footer">
-    <span>© <span id="year"></span> Your Name</span>
+    <span>© <span id="year"></span> Cabin Cult Music</span>
   </footer>
 
 </main>
