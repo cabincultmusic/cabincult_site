@@ -1,6 +1,12 @@
 /* ============================================
    TOKENS
    ============================================ */
+@font-face {
+  font-family: 'Gagalin';
+  src: url('fonts/Gagalin-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --bg: #000000;
   --panel: #000000;
@@ -11,7 +17,7 @@
   --teal: #000000;
   --line: rgba(237, 234, 227, 0.12);
 
-  --font-display: 'Anton', sans-serif;
+  --font-display: 'Gagalin', sans-serif;
   --font-body: 'Newsreader', serif;
   --font-mono: 'JetBrains Mono', monospace;
 
