@@ -212,12 +212,12 @@ a { color: inherit; }
 .meter-bars {
   display: flex;
   align-items: flex-end;
-  gap: 4px;
-  height: 28px;
+  gap: 8px;
+  height: 84px;
 }
 
 .meter-bars span {
-  width: 4px;
+  width: 12px;
   background: var(--teal);
   border-radius: 1px;
   animation: pulse 1.4s ease-in-out infinite;
