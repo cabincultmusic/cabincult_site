@@ -140,6 +140,8 @@ a { color: inherit; }
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 8vh 8vw;
 }
 
@@ -148,13 +150,15 @@ a { color: inherit; }
 .hero__inner--stacked {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2.5rem;
   max-width: 700px;
+  margin: 0 auto;
 }
 
 .hero__top-photo {
   width: 100%;
-  max-width: 420px;
+  max-width: 840px;
   aspect-ratio: 4 / 3;
   background: var(--panel-2);
   border: 1px solid var(--line);
@@ -216,6 +220,7 @@ a { color: inherit; }
 .hero__meter {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
 }
 
