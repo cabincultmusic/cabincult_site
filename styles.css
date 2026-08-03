@@ -80,24 +80,65 @@ a { color: inherit; }
 
 .rail__track {
   position: relative;
-  width: 3px;
+  width: 6px;
   flex: 1;
-  background: var(--line);
+  background: linear-gradient(90deg, #000000 0%, #2c2e31 50%, #000000 100%);
   border-radius: 3px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.9);
   margin: 12px 0;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.rail__track::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -5px;
+  width: 3px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--line) 0,
+    var(--line) 1px,
+    transparent 1px,
+    transparent 9px
+  );
 }
 
 .rail__thumb {
   position: absolute;
   left: 50%;
   top: 0;
-  width: 22px;
-  height: 12px;
-  background: var(--amber);
+  width: 28px;
+  height: 15px;
+  background: linear-gradient(180deg, #f6cd7c 0%, var(--amber) 45%, #a86b23 100%);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 2px;
   transform: translate(-50%, 0);
-  box-shadow: 0 0 8px rgba(232, 163, 61, 0.6);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transition: top 0.1s linear;
+  cursor: grab;
+  touch-action: none;
+}
+
+.rail__thumb.is-dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.rail__thumb::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 50%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.55);
+  transform: translateY(-50%);
+  border-radius: 1px;
 }
 
 .rail__stops {

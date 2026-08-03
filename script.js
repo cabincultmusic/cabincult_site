@@ -256,12 +256,13 @@ function initRail() {
   const track = document.querySelector(".rail__track");
   const stops = document.querySelectorAll(".rail__stop");
   const sections = document.querySelectorAll("main > section[data-section]");
+  let dragging = false;
 
   function updateThumb() {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const ratio = docHeight > 0 ? scrollTop / docHeight : 0;
-    const trackHeight = track.clientHeight - 12; // thumb height
+    const trackHeight = track.clientHeight - thumb.offsetHeight;
     thumb.style.top = `${ratio * trackHeight}px`;
   }
 
@@ -282,6 +283,47 @@ function initRail() {
     updateThumb();
     updateActiveSection();
   }
+
+  // Move the page scroll position based on a pointer's Y coordinate
+  // relative to the track — this is what makes the fader "drivable".
+  function scrollToPointer(clientY) {
+    const trackRect = track.getBoundingClientRect();
+    const thumbHeight = thumb.offsetHeight;
+    const usableHeight = trackRect.height - thumbHeight;
+    let relativeY = clientY - trackRect.top - thumbHeight / 2;
+    relativeY = Math.max(0, Math.min(relativeY, usableHeight));
+    const ratio = usableHeight > 0 ? relativeY / usableHeight : 0;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    window.scrollTo({ top: ratio * docHeight });
+  }
+
+  function startDrag(e) {
+    dragging = true;
+    thumb.classList.add("is-dragging");
+    thumb.setPointerCapture(e.pointerId);
+    scrollToPointer(e.clientY);
+  }
+
+  function duringDrag(e) {
+    if (!dragging) return;
+    scrollToPointer(e.clientY);
+  }
+
+  function endDrag() {
+    dragging = false;
+    thumb.classList.remove("is-dragging");
+  }
+
+  thumb.addEventListener("pointerdown", startDrag);
+  thumb.addEventListener("pointermove", duringDrag);
+  thumb.addEventListener("pointerup", endDrag);
+  thumb.addEventListener("pointercancel", endDrag);
+
+  // Clicking anywhere else on the track jumps straight to that position
+  track.addEventListener("pointerdown", (e) => {
+    if (e.target === thumb) return;
+    scrollToPointer(e.clientY);
+  });
 
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
