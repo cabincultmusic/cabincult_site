@@ -374,6 +374,24 @@ a { color: inherit; }
   gap: 1.75rem;
 }
 
+.project-group {
+  margin-bottom: 4rem;
+}
+
+.project-group:last-child {
+  margin-bottom: 0;
+}
+
+.artist-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--amber);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
 .track {
   display: flex;
   flex-direction: column;

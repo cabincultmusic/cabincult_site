@@ -195,23 +195,42 @@ const PROJECTS = [
 ];
 
 function renderProjects() {
-  const list = document.getElementById("tracklist");
-  list.innerHTML = PROJECTS.map((project) => `
-    <li class="track">
-      <img class="track__art" src="${project.artwork}" alt="${project.title} artwork" loading="lazy">
-      <div class="track__info">
-        <span class="track__title">${project.title}</span>
-        <span class="track__meta">${project.artist} · ${project.country} · ${project.genre}</span>
-        <span class="track__tag">${project.role}</span>
-      </div>
-      <div class="track__links">
-        ${project.links.map((link) => `
-          <a class="track__link" href="${link.url}" target="_blank" rel="noopener noreferrer">
-            ${link.label} ↗
-          </a>
+  const container = document.getElementById("tracklist");
+
+  // Group projects by artist, preserving first-appearance order
+  const groups = [];
+  const groupIndex = {};
+  PROJECTS.forEach((project) => {
+    if (!(project.artist in groupIndex)) {
+      groupIndex[project.artist] = groups.length;
+      groups.push({ artist: project.artist, items: [] });
+    }
+    groups[groupIndex[project.artist]].items.push(project);
+  });
+
+  container.innerHTML = groups.map((group) => `
+    <div class="project-group">
+      <h3 class="artist-heading">${group.artist}</h3>
+      <ol class="tracklist">
+        ${group.items.map((project) => `
+          <li class="track">
+            <img class="track__art" src="${project.artwork}" alt="${project.title} artwork" loading="lazy">
+            <div class="track__info">
+              <span class="track__title">${project.title}</span>
+              <span class="track__meta">${project.country} · ${project.genre}</span>
+              <span class="track__tag">${project.role}</span>
+            </div>
+            <div class="track__links">
+              ${project.links.map((link) => `
+                <a class="track__link" href="${link.url}" target="_blank" rel="noopener noreferrer">
+                  ${link.label} ↗
+                </a>
+              `).join("")}
+            </div>
+          </li>
         `).join("")}
-      </div>
-    </li>
+      </ol>
+    </div>
   `).join("");
 }
 
