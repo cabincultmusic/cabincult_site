@@ -383,13 +383,30 @@ a { color: inherit; }
 }
 
 .artist-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.artist-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  flex-shrink: 0;
+}
+
+.artist-name {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.4rem;
   color: var(--amber);
-  margin: 0 0 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--line);
+  margin: 0;
 }
 
 .track {

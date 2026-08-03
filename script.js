@@ -1,4 +1,15 @@
 /* ============================================
+   ARTIST PHOTOS
+   One photo per artist — shown next to their name as a group header.
+   Just paste a direct image link for each artist below.
+   ============================================ */
+const ARTIST_PHOTOS = {
+  "CGA": "https://placehold.co/160x160/1e2024/9a9da3?text=CGA",
+  "Matt Wellbanks": "https://placehold.co/160x160/1e2024/9a9da3?text=MW",
+  "Cabin Cult": "https://placehold.co/160x160/1e2024/9a9da3?text=CC",
+};
+
+/* ============================================
    PROJECT DATA
    Edit this list — one object per song/project.
 
@@ -210,7 +221,10 @@ function renderProjects() {
 
   container.innerHTML = groups.map((group) => `
     <div class="project-group">
-      <h3 class="artist-heading">${group.artist}</h3>
+      <div class="artist-heading">
+        <img class="artist-photo" src="${ARTIST_PHOTOS[group.artist] || 'https://placehold.co/160x160/1e2024/9a9da3?text=%3F'}" alt="${group.artist}">
+        <h3 class="artist-name">${group.artist}</h3>
+      </div>
       <ol class="tracklist">
         ${group.items.map((project) => `
           <li class="track">
