@@ -1,34 +1,196 @@
 /* ============================================
    PROJECT DATA
    Edit this list — one object per song/project.
-   `artwork` is an image URL (cover art). `url` is where the track lives
-   (Bandcamp, YouTube, SoundCloud, a file link, etc).
-   `role` should be "Mixed", "Mastered", or "Mixed & Mastered".
+
+   `title`   — the song/album title (shown as the card heading)
+   `artist`  — artist name
+   `country` — artist's country
+   `genre`   — genre (fill in as you go — "Genre" is a placeholder)
+   `role`    — "Mixed", "Mastered", or "Mixed & Mastered"
+   `artwork` — image URL (cover art) — placeholder for now
+   `links`   — array of {label, url}. Usually just one (e.g. "Listen"),
+               but you can add more (e.g. Tidal + Amazon Music) for the
+               same project — each shows as its own button on the card.
    ============================================ */
 const PROJECTS = [
+  // ---- CGA (Taiwan / South Africa — Reggae) ----
   {
+    title: "Who? Dub",
     artist: "CGA",
-    country: "Taiwan / S. Africa",
+    country: "Taiwan / South Africa",
     genre: "Reggae",
     role: "Mixed & Mastered",
     artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
-    url: "https://www.youtube.com/watch?v=A_KSyX1IXdw",
+    links: [{ label: "Watch", url: "https://www.youtube.com/watch?v=A_KSyX1IXdw" }],
   },
   {
-    artist: "Artist Name",
-    country: "Country",
-    genre: "Genre",
-    role: "Mastered",
+    title: "No Signal",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
     artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
-    url: "https://example.com/track-two",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/no-signal" }],
   },
   {
-    artist: "Artist Name",
-    country: "Country",
-    genre: "Genre",
-    role: "Mixed",
+    title: "Zen Space",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
     artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
-    url: "https://example.com/track-three",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/zen-space" }],
+  },
+  {
+    title: "Beautiful (feat. Farrell Adams)",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/beautiful-feat-farrell-adams" }],
+  },
+  {
+    title: "Drive Skank",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/drive-skank" }],
+  },
+  {
+    title: "Celestia",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/celestia" }],
+  },
+  {
+    title: "Romulus",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/romulus" }],
+  },
+  {
+    title: "Ascension",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/ascension" }],
+  },
+  {
+    title: "Retro Ghost",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/retro-ghost" }],
+  },
+  {
+    title: "Bliss",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/bliss" }],
+  },
+  {
+    title: "Udrunk",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/udrunk" }],
+  },
+  {
+    title: "Hexzen",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/hexzen" }],
+  },
+  {
+    title: "Doobie",
+    artist: "CGA",
+    country: "Taiwan / South Africa",
+    genre: "Reggae",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://cgamusic.bandcamp.com/track/doobie" }],
+  },
+
+  // ---- Matt Wellbanks (Canada — Folk / Acadian fiddle & voice) ----
+  {
+    title: "Full Album",
+    artist: "Matt Wellbanks",
+    country: "Canada",
+    genre: "Folk / Acadian Fiddle & Voice",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [
+      { label: "Tidal", url: "https://tidal.com/album/421774453" },
+      { label: "Amazon Music", url: "https://music.amazon.com/albums/B0DZ8DV7RV" },
+    ],
+  },
+
+  // ---- Cabin Cult (Taiwan / Canada) ----
+  {
+    title: "Formadge",
+    artist: "Cabin Cult",
+    country: "Taiwan / Canada",
+    genre: "Genre",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://soundcloud.com/bassdarren/formadge" }],
+  },
+  {
+    title: "Succession",
+    artist: "Cabin Cult",
+    country: "Taiwan / Canada",
+    genre: "Genre",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://soundcloud.com/bassdarren/succession" }],
+  },
+  {
+    title: "Papillon 9",
+    artist: "Cabin Cult",
+    country: "Taiwan / Canada",
+    genre: "Genre",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://soundcloud.com/bassdarren/papillon-9" }],
+  },
+  {
+    title: "Winter Palms",
+    artist: "Cabin Cult",
+    country: "Taiwan / Canada",
+    genre: "Genre",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://soundcloud.com/bassdarren/winter-palms" }],
+  },
+  {
+    title: "So Much Clamour",
+    artist: "Cabin Cult",
+    country: "Taiwan / Canada",
+    genre: "Genre",
+    role: "Mixed & Mastered",
+    artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
+    links: [{ label: "Listen", url: "https://soundcloud.com/bassdarren/so-much-clamour" }],
   },
 ];
 
@@ -36,15 +198,19 @@ function renderProjects() {
   const list = document.getElementById("tracklist");
   list.innerHTML = PROJECTS.map((project) => `
     <li class="track">
-      <img class="track__art" src="${project.artwork}" alt="${project.artist} artwork" loading="lazy">
+      <img class="track__art" src="${project.artwork}" alt="${project.title} artwork" loading="lazy">
       <div class="track__info">
-        <span class="track__title">${project.artist}</span>
-        <span class="track__meta">${project.country} · ${project.genre}</span>
+        <span class="track__title">${project.title}</span>
+        <span class="track__meta">${project.artist} · ${project.country} · ${project.genre}</span>
         <span class="track__tag">${project.role}</span>
       </div>
-      <a class="track__link" href="${project.url}" target="_blank" rel="noopener noreferrer">
-        Listen ↗
-      </a>
+      <div class="track__links">
+        ${project.links.map((link) => `
+          <a class="track__link" href="${link.url}" target="_blank" rel="noopener noreferrer">
+            ${link.label} ↗
+          </a>
+        `).join("")}
+      </div>
     </li>
   `).join("");
 }
