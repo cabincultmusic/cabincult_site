@@ -7,12 +7,12 @@
    ============================================ */
 const PROJECTS = [
   {
-    artist: "Artist Name",
-    country: "Country",
-    genre: "Genre",
+    artist: "CGA",
+    country: "Taiwan / S. Africa",
+    genre: "Reggae",
     role: "Mixed & Mastered",
     artwork: "https://placehold.co/300x300/1e2024/9a9da3?text=Artwork",
-    url: "https://example.com/track-one",
+    url: "https://www.youtube.com/watch?v=A_KSyX1IXdw",
   },
   {
     artist: "Artist Name",
