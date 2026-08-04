@@ -144,7 +144,7 @@ a { color: inherit; }
   top: 0;
   width: 30px;
   height: 44px;
-  background: linear-gradient(180deg, #4a4a4d 0%, #232325 40%, #0c0c0d 100%);
+  background: linear-gradient(180deg, #5a6a7a 0%, #2c3540 40%, #0c0f12 100%);
   border: 1px solid rgba(0, 0, 0, 0.7);
   border-radius: 3px;
   transform: translate(-50%, 0);
