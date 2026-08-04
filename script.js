@@ -6,6 +6,7 @@
 const ARTIST_PHOTOS = {
   "CGA": "https://placehold.co/160x160/1e2024/9a9da3?text=CGA",
   "Matt Wellbanks": "https://placehold.co/160x160/1e2024/9a9da3?text=MW",
+  "Not the Spokesmen": "https://placehold.co/160x160/1e2024/9a9da3?text=NTS",
   "Cabin Cult": "https://placehold.co/160x160/1e2024/9a9da3?text=CC",
 };
 
@@ -155,6 +156,17 @@ const PROJECTS = [
       { label: "Tidal", url: "https://tidal.com/album/421774453" },
       { label: "Amazon Music", url: "https://music.amazon.com/albums/B0DZ8DV7RV" },
     ],
+  },
+
+  // ---- Not the Spokesmen (Taiwan / Canada / UK — Rock) ----
+  {
+    title: "Sucks to Be in Love with You (Demo)",
+    artist: "Not the Spokesmen",
+    country: "Taiwan / Canada / UK",
+    genre: "Rock",
+    role: "Mixed & Mastered",
+    artwork: "https://f4.bcbits.com/img/a3386617159_10.jpg",
+    links: [{ label: "Listen", url: "https://notthespokesmen.bandcamp.com/track/sucks-to-be-in-love-with-you-demo" }],
   },
 
   // ---- Cabin Cult (Taiwan / Canada) ----
