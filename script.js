@@ -294,24 +294,51 @@ function initRail() {
     relativeY = Math.max(0, Math.min(relativeY, usableHeight));
     const ratio = usableHeight > 0 ? relativeY / usableHeight : 0;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    window.scrollTo({ top: ratio * docHeight });
+    window.scrollTo(0, ratio * docHeight);
+  }
+
+  let pendingY = null;
+  let rafId = null;
+
+  function flushDrag() {
+    rafId = null;
+    if (pendingY !== null) {
+      scrollToPointer(pendingY);
+      pendingY = null;
+    }
+  }
+
+  function queueScroll(clientY) {
+    pendingY = clientY;
+    if (rafId === null) {
+      rafId = requestAnimationFrame(flushDrag);
+    }
   }
 
   function startDrag(e) {
     dragging = true;
     thumb.classList.add("is-dragging");
     thumb.setPointerCapture(e.pointerId);
+    document.body.style.userSelect = "none";
     scrollToPointer(e.clientY);
+    e.preventDefault();
   }
 
   function duringDrag(e) {
     if (!dragging) return;
-    scrollToPointer(e.clientY);
+    e.preventDefault();
+    queueScroll(e.clientY);
   }
 
   function endDrag() {
     dragging = false;
     thumb.classList.remove("is-dragging");
+    document.body.style.userSelect = "";
+    if (rafId !== null) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+    pendingY = null;
   }
 
   thumb.addEventListener("pointerdown", startDrag);

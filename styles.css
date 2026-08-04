@@ -68,8 +68,24 @@ a { color: inherit; }
   left: 0;
   width: var(--rail-width);
   height: 100vh;
-  background: var(--panel);
-  border-right: 1px solid var(--line);
+  background:
+    repeating-linear-gradient(
+      113deg,
+      rgba(255, 255, 255, 0.035) 0px,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      -70deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    linear-gradient(180deg, #8d9093 0%, #6c6f72 45%, #82868a 75%, #5f6265 100%);
+  border-right: 1px solid rgba(0, 0, 0, 0.6);
+  box-shadow: inset -3px 0 6px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,14 +111,30 @@ a { color: inherit; }
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -5px;
-  width: 3px;
+  left: -6px;
+  width: 4px;
   background-image: repeating-linear-gradient(
     to bottom,
-    var(--line) 0,
-    var(--line) 1px,
+    rgba(0, 0, 0, 0.5) 0,
+    rgba(0, 0, 0, 0.5) 1px,
     transparent 1px,
-    transparent 9px
+    transparent 7px
+  );
+}
+
+.rail__track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -6px;
+  width: 8px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65) 0,
+    rgba(0, 0, 0, 0.65) 1px,
+    transparent 1px,
+    transparent 28px
   );
 }
 
@@ -110,23 +142,49 @@ a { color: inherit; }
   position: absolute;
   left: 50%;
   top: 0;
-  width: 28px;
-  height: 15px;
-  background: linear-gradient(180deg, #f6cd7c 0%, var(--amber) 45%, #a86b23 100%);
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
+  width: 30px;
+  height: 18px;
+  background: linear-gradient(180deg, #4a4a4d 0%, #232325 40%, #0c0c0d 100%);
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
   transform: translate(-50%, 0);
   box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  transition: top 0.1s linear;
+    0 3px 6px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.5);
   cursor: grab;
   touch-action: none;
 }
 
 .rail__thumb.is-dragging {
   cursor: grabbing;
-  transition: none;
+}
+
+.rail__thumb::before {
+  /* center grip ridge, like the raised line on a real fader cap */
+  content: '';
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 3px;
+  bottom: 3px;
+  border-radius: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.3));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rail__thumb::after {
+  /* bright position-indicator line, like the LED strip on a Neve fader */
+  content: '';
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 50%;
+  height: 2px;
+  background: var(--amber);
+  box-shadow: 0 0 4px rgba(232, 163, 61, 0.9), 0 0 1px rgba(232, 163, 61, 1);
+  transform: translateY(-50%);
+  border-radius: 1px;
 }
 
 .rail__thumb::after {
